@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Avaliar Filme</title>
+    <link rel="stylesheet" href="review.css">
+</head>
+<body>
+    <div class="overlay" id="fundo">
+        <div class="card">
+            <div id="dados-filme"></div>
+            
+            <div class="campo">
+                <label>Avalie de 0-10 o filme:</label>
+                <input type="number" id="nota" min="0" max="10" placeholder="0-10">
+            </div>
+
+            <div class="campo">
+                <label>Deixe o seu comentário:</label>
+                <textarea id="comentario"></textarea>
+            </div>
+
+            <button id="btnSalvar">Avaliar</button>
+        </div>
+    </div>
+    <script src="review.js"></script>
+</body>
+</html>

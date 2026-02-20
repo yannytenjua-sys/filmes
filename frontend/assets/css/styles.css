@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    background-color: #2a0848;
+    font-family: sans-serif;
+}
+
+header {
+    background: #ccc; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+}
+
+nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.busca {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#filtro {
+    padding: 8px;
+    border-radius: 20px;
+    border: none;
+    background: #555;
+    color: white;
+}
+
+.grid-filmes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #666; 
+    height: 250px;
+    border-radius: 5px;
+}
