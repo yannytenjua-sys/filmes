@@ -8,24 +8,28 @@
 <body>
 
 <header class="barra-superior">
+    <img src="../assets/css/img/icon.png" alt="BetterMovie" style="height: 35px; margin: 0 1rem;">
     <a href="principal.html" class="botao-voltar">Voltar</a>
 </header>
 
 <main class="conteudo-perfil">
     <div class="bloco-central">
         <div class="utilizador">
-            <img src="../assets/img/user-icon.png" alt="Perfil">
+            <img id="avatar-perfil" src="../assets/css/img/icon.png" alt="Perfil">
         </div>
 
         <div class="informacao-pessoal">
-            <h2 id="nome-perfil">Nome do Utilizador</h2>
-            <p id="email-perfil">utilizador@email.pt</p>
+            <h2 id="nome-perfil">Carregando...</h2>
+            <p id="email-perfil">Carregando...</p>
         </div>
 
         <button id="sair-sessao" class="botao-logout-roxo">Log out</button>
     </div>
+
+    <div id="meus-favoritos"></div>
 </main>
 
+<script src="../java/apiService.js"></script>
 <script src="../java/perfil-utilizador.js"></script>
 </body>
 </html>

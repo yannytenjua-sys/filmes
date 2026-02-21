@@ -8,10 +8,19 @@
 <body>
     <div class="overlay" id="fundo">
         <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <img src="../assets/css/img/icon.png" alt="BetterMovie" style="height: 30px;">
+                <a href="principal.html" style="color: #666; text-decoration: none; font-size: 18px;">✕</a>
+            </div>
             <div id="conteudo-filme"></div>
-            <a href="review.html" id="review" class="btn-v">Avaliar</a>
+            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                <a href="review.html" id="review" class="btn-v">Avaliar</a>
+                <button id="btn-favorito" class="btn-v">Favoritar</button>
+                <button id="btn-lista" class="btn-v">Adicionar à Lista</button>
+            </div>
         </div>
     </div>
-    <script src="detalhes.js"></script>
+    <script src="../java/apiService.js"></script>
+    <script src="../java/detalhes.js"></script>
 </body>
 </html>
