@@ -51,3 +51,7 @@ body { margin: 0; background-color: #2a0848; font-family: sans-serif; }
      text-decoration: none; 
      font-weight: bold; 
 }
+
+#btn-lista.na-lista {
+    background: #4ecdc4;
+}
