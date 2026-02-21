@@ -20,7 +20,7 @@ const Review = sequelize.define(
     rating: {
       type: DataTypes.FLOAT,
       allowNull: false,
-      validate: { min: 0.5, max: 5.0 },
+      validate: { min: 0, max: 5.0 },
     },
     title: {
       type: DataTypes.STRING(200),
