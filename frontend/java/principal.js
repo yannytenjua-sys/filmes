@@ -1,54 +1,59 @@
-const container = document.getElementById('lista-filmes');
-const inputBusca = document.getElementById('filtro');
-let filmes = []; 
+const menu = document.getElementById('menu-navegacao');
+const grid = document.getElementById('lista-conteudo');
+const sidebar = document.getElementById('sidebar');
+const btnHamburguer = document.getElementById('btn-hamburguer');
+const estaLogado = localStorage.getItem('usuarioLogado') === 'true';
 
-async function buscarDados() {
+function carregarMenu() {
+    if (estaLogado) {
+        menu.innerHTML = `
+            <a href="#" class="btn-menu" data-tipo="favoritos">Meus Favoritos</a>
+            <a href="#" class="btn-menu" data-tipo="filme">Filmes</a>
+            <a href="#" class="btn-menu" data-tipo="serie">Séries</a>
+            <a href="#" class="btn-menu" data-tipo="minha-lista">Minha Lista</a>
+        `;
+    } else {
+        menu.innerHTML = `
+            <a href="#" class="btn-menu" data-tipo="filme">Filmes</a>
+            <a href="#" class="btn-menu" data-tipo="serie">Séries</a>
+            <a href="login.html">Iniciar Sessão</a>
+        `;
+    }
+    configurarEventos();
+}
+
+async function carregarDados(tipo) {
+    let endpoint = tipo === 'favoritos' ? 'user/favoritos' : 
+                   tipo === 'minha-lista' ? 'user/lista' : 
+                   tipo + 's';
+
     try {
-        const resposta = await fetch();
-        const dados = await resposta.json();
+        const res = await fetch(``);
+        const dados = await res.json();
         
-        filmes = dados;
-        
-        mostrarNaTela(filmes);
-        
-    } catch (erro) {
-        console.log("Erro ao carregar a API: ", erro);
-        container.innerHTML = "<p>Erro ao carregar os filmes.</p>";
+        grid.innerHTML = dados.map(item => `
+            <div class="card" style="background-image: url(${item.poster})" 
+                 onclick="location.href='detalhes.html?id=${item.id}'">
+            </div>
+        `).join('');
+    } catch (err) {
+        grid.innerHTML = "";
     }
 }
 
-function mostrarNaTela(lista) {
-    container.innerHTML = ""; 
-    
-    lista.forEach(item => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        
-        if(item.thumbnailUrl) {
-            card.style.backgroundImage = `url(${item.thumbnailUrl})`;
-            card.style.backgroundSize = 'cover';
-        }
-        
-        container.appendChild(card);
+function configurarEventos() {
+    document.querySelectorAll('.btn-menu').forEach(link => {
+        link.onclick = (e) => {
+            e.preventDefault();
+            carregarDados(link.dataset.tipo);
+            sidebar.classList.remove('ativo');
+        };
     });
 }
 
-inputBusca.addEventListener('input', () => {
-    const termo = inputBusca.value.toLowerCase();
-    
-    
-    const filtrados = filmes.filter(f => {
-        return f.title.toLowerCase().includes(termo);
-    });
-    
-    mostrarNaTela(filtrados);
-});
-
-const card = document.createElement('div');
-card.className = 'card';
-
-card.onclick = () => {
-    window.location.href = `detalhes.html?id=${filme.id}`;
-
+btnHamburguer.onclick = () => {
+    sidebar.classList.toggle('ativo');
 };
-buscarDados();
+
+carregarMenu();
+carregarDados('filme');
