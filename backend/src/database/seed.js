@@ -94,7 +94,7 @@ const SAMPLE_MOVIES = [
     original_title: "The Dark Knight",
     overview:
       "Quando o crime organizado em Gotham City é liderado por um criminoso conhecido como Coringa, Batman deve aceitar um dos maiores testes de sua capacidade de combater o crime.",
-    poster_path: "/qJ2tW6WMUDux911Bw13lnGjmk.jpg",
+    poster_path: "/eC3EDsKJwv7RtWhG2aQai6d9jw5.jpg",
     backdrop_path: "/hkBaDkMWbLaf8B1lsWsKX7Ew3Xq.jpg",
     release_date: "2008-07-16",
     vote_average: 8.5,
