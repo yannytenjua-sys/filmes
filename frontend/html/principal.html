@@ -3,24 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>BetterMovie</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
 
-<header>
-    <nav>
-        <a href="#">Filmes</a>
-        <a href="#">Séries</a>
-        <a href="#">Entrar</a>
-    </nav>
+<header class="navbar">
+    <div class="nav-esquerda">
+        <div id="btn-hamburguer" class="hamburguer">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="menu-navegacao"></nav>
+    </div>
     <div class="busca">
-        <input type="text" id="filtro" placeholder="Pesquisar Filmes...">
-        <div class="perfil">👤</div>
+        <input type="text" id="filtro-nome" placeholder="Pesquisar...">
+        <a href="perfil-utilizador.html" class="perfil">
+            <img src="../assets/img/user-icon.png" alt="Perfil" style="width: 35px;">
+        </a>
     </div>
 </header>
 
-<main id="lista-filmes" class="grid-filmes">
-    </main>
+<div class="container-principal">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-conteudo">
+            <h3 id="sidebar-titulo">Filtros</h3>
+            <div class="seccao-vertical">
+                <h4>Géneros</h4>
+                <button class="f-gen" data-gen="todos">Todos</button>
+                <button class="f-gen" data-gen="acao">Ação</button>
+                <button class="f-gen" data-gen="drama">Drama</button>
+                <button class="f-gen" data-gen="comedia">Comédia</button>
+                <button class="f-gen" data-gen="terror">Terror</button>
+            </div>
+            <div class="seccao-vertical">
+                <h4>Ano</h4>
+                <select id="filtro-ano">
+                    <option value="todos">Todos</option>
+                    <option value="2026">2026</option>
+                    <option value="2025">2025</option>
+                </select>
+            </div>
+        </div>
+    </aside>
 
+    <main id="lista-conteudo" class="grid-filmes"></main>
+</div>
+
+<script src="../java/principal.js"></script>
 </body>
 </html>

@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    background-color: #2a0848;
+    font-family: sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.barra-superior {
+    background-color: #cccccc;
+    padding: 20px 50px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.botao-voltar {
+    color: #000000;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.conteudo-perfil {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.bloco-central {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.utilizador {
+    width: 160px;
+    height: 160px;
+    border: 5px solid #000000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.utilizador img {
+    width: 20%;
+    height: 20%;
+}
+
+#nome-perfil {
+    color: #ffffff;
+    font-size: 24px;
+    margin: 10px 0 5px 0;
+}
+
+#email-perfil {
+    color: #ffffff;
+    font-size: 16px;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.botao-logout-roxo {
+    background-color: #4a306d;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 60px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: 0.3s ease;
+}
+
+.botao-logout-roxo:hover {
+    background-color: #5a407d;
+    transform: scale(1.05);
+}

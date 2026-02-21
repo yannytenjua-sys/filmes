@@ -2,48 +2,133 @@ body {
     margin: 0;
     background-color: #2a0848;
     font-family: sans-serif;
+    color: white;
+    overflow-x: hidden;
 }
 
-header {
-    background: #ccc; 
+.navbar {
+    background-color: #cccccc;
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 40px;
 }
 
-nav a {
-    margin-right: 15px;
+.nav-esquerda {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.hamburguer {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.hamburguer span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #333333;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.navbar a {
     text-decoration: none;
-    color: #000;
+    color: #000000;
     font-weight: bold;
+    margin-right: 20px;
+    font-size: 15px;
+    cursor: pointer;
 }
 
 .busca {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
 
-#filtro {
-    padding: 8px;
-    border-radius: 20px;
+#filtro-nome {
+    background-color: #666666;
     border: none;
-    background: #555;
+    border-radius: 20px;
+    padding: 10px 20px;
     color: white;
+    width: 250px;
+}
+
+.container-principal {
+    display: flex;
+    min-height: calc(100vh - 70px);
+}
+
+.sidebar {
+    width: 0;
+    overflow: hidden;
+    transition: 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar.ativo {
+    width: 220px;
+    padding: 20px;
+}
+
+.seccao-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 30px;
+}
+
+.seccao-vertical h4 {
+    margin: 15px 0 5px 0;
+    color: #aaaaaa;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.f-gen {
+    background: none;
+    border: none;
+    color: #cccccc;
+    cursor: pointer;
+    padding: 10px 15px;
+    text-align: left;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.f-gen:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
 }
 
 .grid-filmes {
+    flex-grow: 1;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 30px;
     padding: 40px;
-    max-width: 900px;
-    margin: 0 auto;
 }
 
 .card {
-    background: #666; 
-    height: 250px;
-    border-radius: 5px;
+    background-color: #666666;
+    aspect-ratio: 2 / 3;
+    border-radius: 10px;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    outline: 3px solid #ffffff;
 }
