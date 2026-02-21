@@ -16,7 +16,7 @@
                 </div>
                 <div class="input-grupo">
                     <label>Nome de Utilizador:</label>
-                    <input type="text" id="utilizador" required>
+                    <input type="text" id="nome" required>
                 </div>
                 <div class="input-grupo">
                     <label>Palavra-Passe:</label>
@@ -26,11 +26,14 @@
                     <label>Confirmar a Palavra-Passe:</label>
                     <input type="password" id="confirmar" required>
                 </div>
+                <div id="msg-erro" style="color: red; margin-top: 1rem; display: none;"></div>
+                <div id="msg-sucesso" style="color: green; margin-top: 1rem; display: none;"></div>
                 <button type="submit" class="botao">Registar</button>
             </form>
             <p>Já tem uma conta? <a href="login.html">Iniciar Sessão</a></p>
         </div>
     </div>
-    <script src="registo.js"></script>
+    <script src="../java/apiService.js"></script>
+    <script src="../java/resgisto.js"></script>
 </body>
 </html>
